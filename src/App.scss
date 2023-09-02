@@ -1,44 +1,37 @@
 @import "~bootstrap/scss/bootstrap";
 
+.outer {
+  background-color: black;
+  height: 85vh !important;
+  width: 80vh !important;
+  max-width: 700px !important;
+  border-radius: 25px;
+}
+
+.main-display {
+  background-color: grey;
+}
+
+.main-input {
+  max-height: 200px !important;
+  background-color: white;
+}
+
 #root {
-  max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.bg-purple {
+  background: rgb(48, 0, 50);
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+.bg-gray {
+  background: rgb(74, 74, 74);
 }
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.bg-blue {
+  background: rgb(50, 101, 196);
 }
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+.bg-red {
+  background: rgb(196, 50, 53);
 }
