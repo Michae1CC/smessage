@@ -1,7 +1,6 @@
 @import "~bootstrap/scss/bootstrap";
 
 .outer {
-  background-color: black;
   height: 85vh !important;
   width: 80vh !important;
   max-width: 700px !important;
@@ -9,7 +8,9 @@
 }
 
 .main-display {
-  background-color: grey;
+  padding: 15px;
+  background: rgb(238, 238, 238);
+  border-radius: 25px;
 }
 
 .main-input {
@@ -23,11 +24,21 @@
   text-align: center;
 }
 
+.text-user {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 10px;
+  max-width: 50vh !important;
+  color: white;
+  background: rgb(48, 0, 50);
+  border-radius: 25px 5px 25px 25px;
+}
+
 .bg-purple {
   background: rgb(48, 0, 50);
 }
 .bg-gray {
-  background: rgb(74, 74, 74);
+  background: rgb(214, 214, 214);
 }
 .bg-blue {
   background: rgb(50, 101, 196);
