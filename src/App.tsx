@@ -2,6 +2,7 @@
 // import viteLogo from '/vite.svg'
 import "./App.scss";
 import { MessageBubble } from "./MessageBubble";
+import { TextBox } from "./TextBox";
 
 function App() {
   const largeMessage = (
@@ -36,26 +37,7 @@ function App() {
                 <MessageBubble message={largeMessage} />
               </div>
             </div>
-            <div className="row justify-content-center main-input">
-              <div className="input-group" style={{ padding: "2px" }}>
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Recipient's username"
-                  aria-label="Recipient's username"
-                  aria-describedby="button-addon2"
-                />
-                <div className="input-group-append">
-                  <button
-                    className="btn btn-outline-secondary"
-                    type="button"
-                    id="button-addon2"
-                  >
-                    Button
-                  </button>
-                </div>
-              </div>
-            </div>
+          <TextBox />
           </div>
         </div>
       </div>
