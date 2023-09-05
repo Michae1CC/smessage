@@ -3,10 +3,11 @@
 import "./App.scss";
 import { MessageBubble } from "./MessageBubble";
 import { TextBox } from "./TextBox";
+import React,  {useState, useEffect} from "react";
 
 function App() {
+  const smallMessage = "Hello";
   const largeMessage = (
-
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit." +
                     "Praesent sed vehicula nisi, sed feugiat justo. Etiam a sem" +
                     "justo. Nam varius egestas ipsum, sed sodales ex sagittis" +
@@ -23,7 +24,13 @@ function App() {
                     "sodales. Quisque fringilla rhoncus elementum. Donec placerat" + 
                     "vel nulla vitae congue. Aenean faucibus neque tellus," + 
                     "commodo pharetra arcu elementum eget." 
-  )
+  );
+  const [messageList, setMessageList] = useState<Array<[string, boolean]>>()
+  
+  useEffect(() => {
+    setMessageList([[smallMessage, true], [largeMessage, false]]);
+  }, [smallMessage, largeMessage]);
+
   // https://getbootstrap.com/docs/4.3/utilities/overflow/
   // https://bootsnipp.com/snippets/6XlB5
   return (
@@ -33,8 +40,15 @@ function App() {
           <div className="h-100 d-flex flex-column">
             <div className="row justify-content-center flex-grow-1 main-display">
               <div className="text-white">
-                <MessageBubble message="Lorem ipsum dolor sit amet." />
-                <MessageBubble message={largeMessage} />
+                {messageList?.map(([message, fromUser], index) => {
+                  return (
+                    <MessageBubble
+                      key={index}
+                      message={message}
+                      fromUser={fromUser}
+                    />
+                  );
+                })}
               </div>
             </div>
           <TextBox />
