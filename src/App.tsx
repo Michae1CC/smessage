@@ -1,83 +1,9 @@
-// import { useState } from 'react'
-// import viteLogo from '/vite.svg'
 import "./App.scss";
-import { MessageBubble } from "./MessageBubble";
-import { TextBox } from "./TextBox";
-import React,  {useState, useEffect} from "react";
+import "./Chat"
+import Chat from "./Chat";
 
 function App() {
-  const smallMessage = "Hello";
-  const largeMessage = (
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit." +
-                    "Praesent sed vehicula nisi, sed feugiat justo. Etiam a sem" +
-                    "justo. Nam varius egestas ipsum, sed sodales ex sagittis" +
-                    "quis. Suspendisse varius mi eu dapibus egestas. Vivamus" + 
-                    "purus enim, tempus sit amet odio et, suscipit imperdiet sem." + 
-                    "Aenean nisl orci, pharetra ut bibendum ut, faucibus eget" + 
-                    "tortor. Pellentesque habitant morbi tristique senectus et" + 
-                    "netus et malesuada fames ac turpis egestas. Praesent a nunc" + 
-                    "id eros gravida consequat. Aenean nibh lorem, venenatis non" + 
-                    "enim eu, imperdiet rutrum tellus. Nulla consectetur placerat" + 
-                    "erat, a fermentum ex bibendum a. Suspendisse id iaculis" + 
-                    "augue. Integer ante mi, pulvinar et lectus ornare, gravida" + 
-                    "consectetur orci. Duis imperdiet elit eu dui suscipit" + 
-                    "sodales. Quisque fringilla rhoncus elementum. Donec placerat" + 
-                    "vel nulla vitae congue. Aenean faucibus neque tellus," + 
-                    "commodo pharetra arcu elementum eget." 
-  );
-  const [messageList, setMessageList] = useState<Array<[string, boolean]>>()
-  
-  useEffect(() => {
-    setMessageList([[smallMessage, true], [largeMessage, false], [largeMessage, true]]);
-  }, [smallMessage, largeMessage]);
-
-  useEffect(() => {
-    // Scroll to the bottom of the main display every time a new message is 
-    // added to the message list
-    const mainDisplay = document.querySelectorAll(".main-display")[0];
-    mainDisplay.scrollTop = mainDisplay.scrollHeight;
-  }, [messageList]);
-
-  const sendMessage: React.MouseEventHandler<HTMLElement> = (e: React.MouseEvent<HTMLElement>) => {
-    // Kinda jank, I know
-    const userInput = document.querySelectorAll(".form-control")[0] as HTMLInputElement;
-    const userInputText = userInput.value;
-
-    if (userInputText === "") {
-      return;
-    }
-
-    if (messageList !== undefined) {
-      setMessageList([...messageList, [userInputText, true]]);
-    }
-
-    userInput.value = "";
-  }
-
-  // https://getbootstrap.com/docs/4.3/utilities/overflow/
-  // https://bootsnipp.com/snippets/6XlB5
-  return (
-    <>
-      <div className="container-fluid outer">
-        <div className="row justify-content-center h-100">
-          <div className="h-100 d-flex flex-column">
-            <div className="row justify-content-center flex-grow-1 main-display">
-                {messageList?.map(([message, fromUser], index) => {
-                  return (
-                    <MessageBubble
-                      key={index}
-                      message={message}
-                      fromUser={fromUser}
-                    />
-                  );
-                })}
-            </div>
-          <TextBox onClick={sendMessage} />
-          </div>
-        </div>
-      </div>
-    </>
-  );
+  return (<Chat />);
 }
 
 export default App;

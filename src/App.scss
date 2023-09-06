@@ -1,61 +1,7 @@
 @import "~bootstrap/scss/bootstrap";
 
-.outer {
-  height: 85vh !important;
-  width: 80vh !important;
-  max-width: 700px !important;
-  border-radius: 25px;
-}
-
-.main-display {
-  padding: 15px;
-  background: rgb(238, 238, 238);
-  border-radius: 25px;
-  overflow: auto;
-}
-
-.main-input {
-  max-height: 200px !important;
-  background-color: white;
-}
-
 #root {
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-}
-
-.text-user {
-  text-align: left;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  padding: 10px;
-  max-width: 50vh !important;
-  color: white;
-  background: rgb(48, 0, 50);
-  border-radius: 25px 5px 25px 25px;
-}
-
-.text-recipient {
-  text-align: left;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  padding: 10px;
-  max-width: 50vh !important;
-  color: black;
-  background: rgb(181, 181, 181);
-  border-radius: 5px 25px 25px 25px;
-}
-
-.bg-purple {
-  background: rgb(48, 0, 50);
-}
-.bg-gray {
-  background: rgb(214, 214, 214);
-}
-.bg-blue {
-  background: rgb(50, 101, 196);
-}
-.bg-red {
-  background: rgb(196, 50, 53);
 }
