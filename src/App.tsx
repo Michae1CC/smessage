@@ -1,9 +1,23 @@
 import "./App.scss";
 import "./Chat"
-import Chat from "./Chat";
 
 function App() {
-  return (<Chat />);
+  return (
+      <div className="container-fluid outer-container">
+        <div className="row patient-case-box">
+          <div className="row patient-case-title-row">
+            Text
+          </div>
+  <div className="row row-cols-auto">
+    <div className="col">Column</div>
+    <div className="col">Column</div>
+    <div className="col">Column</div>
+    <div className="col">Column</div>
+  </div>
+
+        </div>
+      </div>
+  );
 }
 
 export default App;
