@@ -28,8 +28,31 @@ function App() {
   const [messageList, setMessageList] = useState<Array<[string, boolean]>>()
   
   useEffect(() => {
-    setMessageList([[smallMessage, true], [largeMessage, false]]);
+    setMessageList([[smallMessage, true], [largeMessage, false], [largeMessage, true]]);
   }, [smallMessage, largeMessage]);
+
+  useEffect(() => {
+    // Scroll to the bottom of the main display every time a new message is 
+    // added to the message list
+    const mainDisplay = document.querySelectorAll(".main-display")[0];
+    mainDisplay.scrollTop = mainDisplay.scrollHeight;
+  }, [messageList]);
+
+  const sendMessage: React.MouseEventHandler<HTMLElement> = (e: React.MouseEvent<HTMLElement>) => {
+    // Kinda jank, I know
+    const userInput = document.querySelectorAll(".form-control")[0] as HTMLInputElement;
+    const userInputText = userInput.value;
+
+    if (userInputText === "") {
+      return;
+    }
+
+    if (messageList !== undefined) {
+      setMessageList([...messageList, [userInputText, true]]);
+    }
+
+    userInput.value = "";
+  }
 
   // https://getbootstrap.com/docs/4.3/utilities/overflow/
   // https://bootsnipp.com/snippets/6XlB5
@@ -39,7 +62,6 @@ function App() {
         <div className="row justify-content-center h-100">
           <div className="h-100 d-flex flex-column">
             <div className="row justify-content-center flex-grow-1 main-display">
-              <div className="text-white">
                 {messageList?.map(([message, fromUser], index) => {
                   return (
                     <MessageBubble
@@ -49,9 +71,8 @@ function App() {
                     />
                   );
                 })}
-              </div>
             </div>
-          <TextBox />
+          <TextBox onClick={sendMessage} />
           </div>
         </div>
       </div>

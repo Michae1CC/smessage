@@ -2,6 +2,7 @@
  import React from "react";
 
 interface TextBoxProps {
+  onClick: React.MouseEventHandler<HTMLElement>;
 }
 
 export const TextBox: React.FunctionComponent<TextBoxProps> = (props: TextBoxProps) => {
@@ -21,6 +22,7 @@ export const TextBox: React.FunctionComponent<TextBoxProps> = (props: TextBoxPro
                     className="btn btn-outline-secondary"
                     type="button"
                     id="button-addon2"
+                    onClick={props.onClick}
                   >
                     Send
                   </button>
