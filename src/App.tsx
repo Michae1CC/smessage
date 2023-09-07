@@ -1,22 +1,16 @@
 import "./App.scss";
-import "./Chat"
+import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import PatientCaseList from "./PatientCaseList";
 
 function App() {
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <PatientCaseList />
+    }
+  ]);
   return (
-      <div className="container-fluid outer-container">
-        <div className="row patient-case-box">
-          <div className="row patient-case-title-row">
-            Text
-          </div>
-  <div className="row row-cols-auto">
-    <div className="col">Column</div>
-    <div className="col">Column</div>
-    <div className="col">Column</div>
-    <div className="col">Column</div>
-  </div>
-
-        </div>
-      </div>
+    <RouterProvider router={router} />
   );
 }
 
