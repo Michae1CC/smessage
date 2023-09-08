@@ -1,10 +1,13 @@
 
 import "./PatientCaseList.scss"
-import {mockPatientData} from "./data"
+import {PatientDataType, PatientIdentifierType} from "./types"
+
+type PatientCaseListProps = {
+  patientIdentifier: PatientIdentifierType;
+} & PatientDataType;
 
 function PatientCaseList() {
   return (
-    <div className="container-fluid outer-container">
       <a href="/case/99999">
       <div className="row patient-case-box">
         <div className="row row-cols-auto patient-case-title-row">
@@ -16,7 +19,6 @@ function PatientCaseList() {
         </div>
       </div>
       </a>
-    </div>
   );
 }
 
