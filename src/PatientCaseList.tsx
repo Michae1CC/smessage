@@ -1,5 +1,6 @@
 
 import "./PatientCaseList.scss"
+import "./PatientCaseCard.scss"
 import {mockPatientData} from "./data"
 
 function PatientCaseList() {
