@@ -56,8 +56,8 @@ function Chat() {
   // https://getbootstrap.com/docs/4.3/utilities/overflow/
   // https://bootsnipp.com/snippets/6XlB5
   return (
-      <div className="outer">
-        <div className="row justify-content-center h-100">
+      <div className="outer w-100">
+        <div className="row justify-content-center h-100" style={{margin: 0}}>
           <div className="h-100 d-flex flex-column">
             <div className="row justify-content-center flex-grow-1 main-display">
               <div>
