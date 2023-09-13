@@ -9,7 +9,7 @@ export const TextBox: React.FunctionComponent<TextBoxProps> = (props: TextBoxPro
     props;
     return (
       <div className="row justify-content-center main-input">
-        <div className="input-group" style={{ padding: "2px" }}>
+        <div className="input-group">
           <input
             type="text"
             className="form-control"

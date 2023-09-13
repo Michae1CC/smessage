@@ -28,6 +28,7 @@ function Chat() {
   
   useEffect(() => {
     setMessageList([[smallMessage, true], [largeMessage, false], [largeMessage, true]]);
+    // setMessageList([[smallMessage, true], [largeMessage, false]]);
   }, [smallMessage, largeMessage]);
 
   useEffect(() => {
@@ -56,11 +57,13 @@ function Chat() {
   // https://getbootstrap.com/docs/4.3/utilities/overflow/
   // https://bootsnipp.com/snippets/6XlB5
   return (
-      <div className="outer w-100">
-        <div className="row justify-content-center h-100" style={{margin: 0}}>
-          <div className="h-100 d-flex flex-column">
-            <div className="row justify-content-center flex-grow-1 main-display">
-              <div>
+    <div className="outer">
+      <div className="row" style={{ margin: 0 }}>
+        <div className="col-sm-2">hi</div>
+        <div className="col-sm-10" style={{ height: "100vh" }}>
+          <div className="row">
+            <div style={{ height: "100vh", overflow: "clip" }}>
+              <div className="row main-display">
                 {messageList?.map(([message, fromUser], index) => {
                   return (
                     <MessageBubble
@@ -71,11 +74,14 @@ function Chat() {
                   );
                 })}
               </div>
+              <div className="row" style={{overflow: "overflow", height:"7vh"}}>
+                <TextBox onClick={sendMessage} />
+              </div>
             </div>
-          <TextBox onClick={sendMessage} />
           </div>
         </div>
       </div>
+    </div>
   );
 }
 
