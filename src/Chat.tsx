@@ -1,6 +1,7 @@
 
 import "./Chat.scss";
 import { MessageBubble } from "./MessageBubble";
+import { ChatNavBar } from "./ChatNavBar";
 import { TextBox } from "./TextBox";
 import React,  {useState, useEffect} from "react";
 
@@ -59,7 +60,9 @@ function Chat() {
   return (
     <div className="outer">
       <div className="row" style={{ margin: 0 }}>
-        <div className="col-sm-2">hi</div>
+        <div className="col-sm-2">
+          <ChatNavBar/>
+        </div>
         <div className="col-sm-10">
           <div className="row main-display">
             {messageList?.map(([message, fromUser], index) => {
