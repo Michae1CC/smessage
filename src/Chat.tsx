@@ -60,24 +60,20 @@ function Chat() {
     <div className="outer">
       <div className="row" style={{ margin: 0 }}>
         <div className="col-sm-2">hi</div>
-        <div className="col-sm-10" style={{ height: "100vh" }}>
-          <div className="row">
-            <div style={{ height: "100vh", overflow: "clip" }}>
-              <div className="row main-display">
-                {messageList?.map(([message, fromUser], index) => {
-                  return (
-                    <MessageBubble
-                      key={`message-bubble-${index}`}
-                      message={message}
-                      fromUser={fromUser}
-                    />
-                  );
-                })}
-              </div>
-              <div className="row" style={{overflow: "overflow", height:"7vh"}}>
-                <TextBox onClick={sendMessage} />
-              </div>
-            </div>
+        <div className="col-sm-10">
+          <div className="row main-display">
+            {messageList?.map(([message, fromUser], index) => {
+              return (
+                <MessageBubble
+                  key={`message-bubble-${index}`}
+                  message={message}
+                  fromUser={fromUser}
+                />
+              );
+            })}
+          </div>
+          <div className="row main-input">
+            <TextBox onClick={sendMessage} />
           </div>
         </div>
       </div>

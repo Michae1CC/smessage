@@ -8,7 +8,7 @@ interface TextBoxProps {
 export const TextBox: React.FunctionComponent<TextBoxProps> = (props: TextBoxProps) => {
     props;
     return (
-      <div className="row justify-content-center main-input">
+      <div className="row justify-content-center">
         <div className="input-group">
           <input
             type="text"
