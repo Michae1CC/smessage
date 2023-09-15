@@ -1,1 +1,22 @@
 @import "~bootstrap/scss/bootstrap";
+
+.chat-nav-outer {
+    margin: 1em;
+}
+
+.nav-option {
+    -moz-transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
+    -webkit-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+    color: white;
+    background-color: #1f2123;
+    padding: 0.2em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    border-radius: 0.5em;
+}
+
+.nav-option:hover {
+    background-color: #3b3e42;
+}

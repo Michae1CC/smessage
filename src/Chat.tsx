@@ -60,7 +60,7 @@ function Chat() {
   return (
     <div className="outer">
       <div className="row" style={{ margin: 0 }}>
-        <div className="col-sm-2">
+        <div className="col-sm-2 main-chat-nav">
           <ChatNavBar/>
         </div>
         <div className="col-sm-10">
