@@ -1,12 +1,13 @@
 
 import "./PatientCaseList.scss"
 import "./PatientCaseCard.scss"
+import {Link} from "react-router-dom"
 import {mockPatientData} from "./data"
 
 function PatientCaseList() {
   return (
     <div className="container-fluid outer-container">
-      <a href="/case/99999">
+      <Link to="/case/99999">
       <div className="row patient-case-box">
         <div className="row row-cols-auto patient-case-title-row">
           <div className="col">Patient Case #952285</div>
@@ -16,7 +17,7 @@ function PatientCaseList() {
           <div className="col">Submitted: 02/03/2023</div>
         </div>
       </div>
-      </a>
+      </Link>
     </div>
   );
 }
